@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './app.scss';
-import { Button, Content } from 'carbon-components-react';
-import { DatePicker, DatePickerInput } from 'carbon-components-react';
 import TutorialHeader from './components/TutorialHeader';
+import { Route, Switch } from 'react-router-dom';
+import LandingPage from './content/LandingPage';
+import RepoPage from './content/RepoPage';
+import SolarReport from './content/SolarReport';
 
 class App extends Component {
   render() {
@@ -10,21 +12,6 @@ class App extends Component {
       <>
         <TutorialHeader />
         <Content>
-          {/* <Button>Button</Button>
-          <DatePicker datePickerType="range">
-            <DatePickerInput
-              id="date-picker-input-id-start"
-              dateFormat="d/m/Y"
-              placeholder="dd/mm/yyyy"
-              labelText="Start date"
-            />
-            <DatePickerInput
-              id="date-picker-input-id-finish"
-              dateFormat="d/m/Y"
-              placeholder="dd/mm/yyyy"
-              labelText="End date"
-            />
-          </DatePicker> */}
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/repos" component={RepoPage} />
